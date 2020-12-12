@@ -23,7 +23,7 @@ public class TeamRobot {
     ArrayList<Motor> wheels = new ArrayList<>();
     RobotVision robotVision = null;
 
-
+    //change all values on case.  coded backwords, change values.  void
 
     /**
      * Constructor: all params
@@ -174,6 +174,7 @@ public class TeamRobot {
                             wheel.set(power);
                             wheel.getTicker().setTargetPos(ticks);
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
+                            // dont need front right and back left here (uneccacary)
                     }
                 }
             case RIGHT:
@@ -189,6 +190,7 @@ public class TeamRobot {
                             wheel.set(power*-1);
                             wheel.getTicker().setTargetPos(ticks);
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
+                            // mistake here
                     }
                 }
         }
@@ -216,9 +218,10 @@ public class TeamRobot {
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
                         case FRONT_RIGHT:
                         case BACK_RIGHT:
-                            wheel.set(power);
+                            wheel.set(power * 1);
                             wheel.getTicker().setTargetPos(ticks);
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
+                            //why are there two wheels smaller code front right front left dont have to be there (not neccecary)
                     }
                 }
             case RIGHT:
@@ -229,6 +232,7 @@ public class TeamRobot {
                             wheel.set(power);
                             wheel.getTicker().setTargetPos(ticks);
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
+                            //case front and back left dont have to be there (not neccacary
                         case FRONT_RIGHT:
                         case BACK_RIGHT:
                             wheel.set(power*-1);
@@ -250,6 +254,7 @@ public class TeamRobot {
     public void turnOnCorners(Corner corner, int ticks, double power) {
         // https://www.roboteq.com/images/article-images/frontpage/wheel-rotations.jpg
         switch(corner) {
+                // turning wrong way (change name)
             case FRONT_LEFT_CORNER:
                 for (Motor wheel : wheels) {
                     switch(wheel.getWheelType()) {
@@ -262,6 +267,7 @@ public class TeamRobot {
                             wheel.set(power*-1);
                             wheel.getTicker().setTargetPos(ticks);
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
+                            //front and back right not neccary need to be removed
                     }
                 }
             case BACK_LEFT_CORNER:
@@ -276,6 +282,7 @@ public class TeamRobot {
                             wheel.set(power);
                             wheel.getTicker().setTargetPos(ticks);
                             wheel.getTicker().setRunMode(DcMotor.RunMode.RUN_TO_POSITION);
+                          
                     }
                 }
             case FRONT_RIGHT_CORNER:
